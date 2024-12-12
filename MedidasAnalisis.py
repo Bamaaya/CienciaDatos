@@ -1,3 +1,7 @@
+
+
+
+
 # -*- coding: utf-8 -*-
 """
 Created on Tue Oct 22 15:23:34 2024
@@ -296,4 +300,50 @@ def MAD(valores):
         MAD = (datosMinusMed[medio]+datosMinusMed[medio-1]/2)
         return MAD
     
-
+def coef(x, y):
+    
+    """
+    Función coef():
+        Calcula el coeficiente de relación de Pearson entre 2 conjuntos de datos de igual longitud
+        Esto mediante el cálculo de la fórmula del mismo
+    
+    Variables:
+        -x_promx: promedio del conjunto en x
+        -y_promy: promedio del conjunto en y
+        -multixy: lista con el producto entre cada valor de ambas listas restado a su respectivo promedio
+        -x_promx2: lista con el cuadrado de cada diferencia entre los valores de x y su promedio
+        -y_promy2: lista con el cuadrado de cada diferencia entre los valores de y y su promedio
+        -num: numerador de la fórmula del coeficiente de relación
+        -den: denominador de la fórmula del coeficiente de relación
+    """
+    
+    promx = mediaAritmetica(x)
+    promy = mediaAritmetica(y)
+    
+    x_promx = []
+    y_promy = []
+    
+    for i in range(len(x)):     #for para añadir los valores respectivos a x_promx e y_promx
+        x_promx.append(x[i]-promx)
+        y_promy.append(y[i]-promy)
+    
+    multixy = []
+    x_promx2 = []
+    y_promy2 = []
+    
+    for i in range(len(x)):     #for para añadir sus valores respectivos a x_promx2, y_promy2 y multixy
+        x_promx2.append(x_promx[i]**2)
+        y_promy2.append(y_promy[i]**2)
+        multixy.append(x_promx[i]*y_promy[i])
+        
+    num = sum(multixy)
+    den = ((sum(x_promx2))**0.5)*((sum(y_promy2))**0.5)
+    
+    return num/den  #Se retorna el cociente entre num y den con tal de obtener el coeficiente de relación
+    
+    
+    
+    
+    
+    
+    

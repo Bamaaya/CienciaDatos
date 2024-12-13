@@ -14,12 +14,13 @@ def mediaAritmetica(valores):
     
     """
      Función mediaAritmetica():
+         input: lista de datos(list), output: promedio de los datos(float)
          Calcula el valor de la media aritmetica de todos los valores de una lista de números ingresada
          Divide la suma total de los datos ingresados por el número de datos ingresados, retornando el promedio
         
      Variables:
-        -suma: Suma de todos los valores de la lista
-        -x_aritmetica: Media aritmética calculada del cociente entre las 2 variables mencionadas
+        -suma(float): Suma de todos los valores de la lista
+        -x_aritmetica(float): Media aritmética calculada del cociente entre las 2 variables mencionadas
     """
     
     lista = []
@@ -37,6 +38,7 @@ def mediana(valores):
     
     """
      Función Mediana():
+         input: lista de datos(list), output: mediana de los datos(float)
          Retorna la mediana de una lista de números ingresada
          Ordena la lista con tal de buscar el valor medio de la misma mediante división entera
          Mediante el módulo entre la cantidad de datos y 2 se determina si la lista es par o no
@@ -44,10 +46,10 @@ def mediana(valores):
          Si es impar, retorna el valor medio calculado
 
      Variables:
-        -largo_lista: Largo de la lista de valores ingresada
-        -valor_medio: División entera de largo_lista en 2, equivale a la posición media del conjunto de datos
-        -determinante: Módulo entre largo_lista y 2. Determina si largo_lista es par dependiendo si da 0 o distinto de 0
-        -med: Valor de la mediana de la lista de valores ingresados
+        -largo_lista(int): Largo de la lista de valores ingresada
+        -valor_medio(int): División entera de largo_lista en 2, equivale a la posición media del conjunto de datos
+        -determinante(int): Módulo entre largo_lista y 2. Determina si largo_lista es par dependiendo si da 0 o distinto de 0
+        -med(float): Valor de la mediana de la lista de valores ingresados
             Si es impar equivale al valor ubicado en el valor medio de la lista
             Si es par equivale al promedio de la suma entre el número ubicado en valor_medio y su predecesor (ya que era división entera)
     """
@@ -74,6 +76,7 @@ def moda(valores):
     
     """
      Función moda():
+         input: lista de datos(list), output: listas con moda y variables (list)
          Función que calcula la moda de una lista dada y retorna cada variable que se repite el máximo de veces
          Primero genera una lista con todas las variables sin repetición y otra con la cantidad de veces que se repiten respectivamente
          Después genera otra lista adicional, donde se añade cada variable que se repite la mayor cantidad de veces
@@ -84,12 +87,12 @@ def moda(valores):
                  La lista está ordenada desde el menos repetido hacia los más repetidos
 
      Variables:
-        -listaVariables: Lista con cada variable individual de la lista ingresada
-        -Cantidades: Lista con la cantidad respectiva de repeticiones de los valores en listaModa
-        -cont: Contador empleado para determinar la cantidad de veces que se repite cada variable en listaVariables
-        -listaModas: Lista con cada moda de la lista, la cantidad de veces se halla en el índice 0
-        -maximo: Valor máximo de repeticiones que alcanza una variable, equivale al valor máximo en Cantidades
-        -listaCantidades: Lista que contiene una listas pareadas con cada variable y su cantidad respectiva de repeticiones     
+        -listaVariables(list): Lista con cada variable individual de la lista ingresada
+        -Cantidades(list): Lista con la cantidad respectiva de repeticiones de los valores en listaModa
+        -cont(int): Contador empleado para determinar la cantidad de veces que se repite cada variable en listaVariables
+        -listaModas(list): Lista con cada moda de la lista, la cantidad de veces se halla en el índice 0
+        -maximo(int): Valor máximo de repeticiones que alcanza una variable, equivale al valor máximo en Cantidades
+        -listaCantidades(list): Lista que contiene una listas pareadas con cada variable y su cantidad respectiva de repeticiones     
     """
     
     listaVariables = []
@@ -128,12 +131,13 @@ def rango(valores):
     
     """
      Función rango():
+         input: lista de datos(list), output: rango de los datos(float)
          Calcula el rango de una lista de datos ingresada, siendo este la diferencia entre el valor máximo y el mínimo de la lista
 
      variables:
-        -maximo: Valor máximo de la lista
-        -minimo: Valor mínimo de la lista
-        -rango: resto entre máximo y mínimo
+        -maximo(float): Valor máximo de la lista
+        -minimo(float): Valor mínimo de la lista
+        -rango(float): resto entre máximo y mínimo
     """
     
     lista = []
@@ -150,14 +154,15 @@ def varianza(valores):
   
     """
     Función varianza():
+        input: lista de datos(list), output: varianza de los datos(float)
         Calcula la varianza de un lista de números ingresada
         Esto mediante la sumatoria de la diferencia entre cada valor de la lista y su promedio al cuadrado dividido por el largo del conjunto
 
      Variables:
-         -prom: Media aritmética de los datos calculada con la función mediaAritmetica()
-         -datosMinusProm: Lista que contiene el resto de cada valor de la lista y su promedio al cuadrado
-         -n: Cantidad de valores de la lista ingresada
-         -varianza: Varianza de los datos ingresados. Calculada como la suma de cada valor de datosMinusProm dividido por n
+         -prom(float): Media aritmética de los datos calculada con la función mediaAritmetica()
+         -datosMinusProm(list): Lista que contiene el resto de cada valor de la lista y su promedio al cuadrado
+         -n(int): Cantidad de valores de la lista ingresada
+         -varianza(float): Varianza de los datos ingresados. Calculada como la suma de cada valor de datosMinusProm dividido por n
     """
     
     lista = []
@@ -181,11 +186,12 @@ def desvEst(valores):
     
     """
      Función desvEst():
+         input: lista de datos(list), output: desviación estándar de los datos(float)
          Calcula la desviación estándar de una lista de números ingresada
          Ya que la desviación estándar se puede calcular como la raiz de la varianza, se llama a la función varianza y se eleva a 0.5
 
      Variables:
-        #varianza_lista: 
+         -varianza_lista(float): llamado a la funcion varianza()
     """
     
     lista = []
@@ -201,6 +207,7 @@ def percentil(valores):
     
     """
      Función percentil():
+         input: lista de datos(list), output: lista con los percentiles 1-99(list)
          Retorna una lista con cada percentil de la lista de datos ingresada [1-99]
          Calcula cada percentil como n*k/100
             Donde:
@@ -208,11 +215,11 @@ def percentil(valores):
                  n = largo del conjunto de datos
 
      Variables:
-         -listaPercentiles: Lista que contiene cada percentil de la lista ingresada
+         -listaPercentiles(list): Lista que contiene cada percentil de la lista ingresada
              Ya que son 99 datos, el percentil correspondiente equivale a percentil-1
              ej: el percentil 78 en listaPercentiles se llama como listaPercentiles[77]
-         -n: Cantidad de datos de la lista ingresada
-         -percentil: Valor individual de un percentil, equivale a la posición del percentil en la lista
+         -n(int): Cantidad de datos de la lista ingresada
+         -percentil(int): Valor individual de un percentil, equivale a la posición del percentil en la lista
              Se calcula como n multiplicado al numero del percentil correspondiente dividido en 100
     """
     
@@ -235,12 +242,13 @@ def intercuartil(valores):
     
     """
      Función intercuartil():
+         input: lista de datos(list), output: rango intercuartil de los datos(float)
          Devuelve el rango intercuartílico de una lista de datos, siendo este la diferencia entre su respectivo cuartil 3 y 1
          Ya que los cuartiles son equivalentes a los percentiles 25, 50 y 75, se utiliza la función percentil para ello
 
      Variables:
-         -percentiles: Lista con los percentiles de la lista de números ingresada, obtenida con la función percentil()
-         -rangoInter: Valor equivalente al rango intercuartílico, resto entre el cuartil 3 y el 1
+         -percentiles(list): Lista con los percentiles de la lista de números ingresada, obtenida con la función percentil()
+         -rangoInter(list): Valor equivalente al rango intercuartílico, resto entre el cuartil 3 y el 1
              Utilizando percentiles: cuartil 3 = percentil 75, cuartil 1 = percentil 25
     """
     
@@ -254,6 +262,7 @@ def MAD(valores):
     
     """
      Función MAD():
+         input: lista de datos(list), output: mad de los datos(float)
          Calcula la desviación mediana absoluta de una lista de números ingresada
          Se calcula la mediana mediante la misma lógica usada en la función de mediana()
          Genera una lista donde se incluye cada el valor absoluto de la diferencia entre cada valor de la lista ingresada y su mediana
@@ -262,12 +271,12 @@ def MAD(valores):
              Es par, retorna el promedio de la suma de los 2 valores ubicados al medio de la lista
 
      Variables:
-         -n: Cantidad de datos en la lista
-         -med: Mediana de la lista ingresada, calculada con la función mediana()
-         -datosMinusMed: Lista que contiene el valor absoluto de la diferencia entre cada valor de la lista y su mediana
-         -medio: Posición media de la lista, calculada con división entera
-         -determinante: Variable que define mediante el módulo de n y 2 si la lista es par o no
-         -MAD: Valor de la desviación mediana absoluta de la lista ingresada
+         -n(int): Cantidad de datos en la lista
+         -med(float): Mediana de la lista ingresada, calculada con la función mediana()
+         -datosMinusMed(list): Lista que contiene el valor absoluto de la diferencia entre cada valor de la lista y su mediana
+         -medio(int): Posición media de la lista, calculada con división entera
+         -determinante(int): Variable que define mediante el módulo de n y 2 si la lista es par o no
+         -MAD(int): Valor de la desviación mediana absoluta de la lista ingresada
     """
     
     lista = []  #Ciclo para deshacerse de los nans
@@ -304,17 +313,18 @@ def coef(x, y):
     
     """
     Función coef():
+        input: 2 lista de datos(list), output: coeficiente de relación entre ambas listas datos(float)
         Calcula el coeficiente de relación de Pearson entre 2 conjuntos de datos de igual longitud
         Esto mediante el cálculo de la fórmula del mismo
     
     Variables:
-        -x_promx: promedio del conjunto en x
-        -y_promy: promedio del conjunto en y
-        -multixy: lista con el producto entre cada valor de ambas listas restado a su respectivo promedio
-        -x_promx2: lista con el cuadrado de cada diferencia entre los valores de x y su promedio
-        -y_promy2: lista con el cuadrado de cada diferencia entre los valores de y y su promedio
-        -num: numerador de la fórmula del coeficiente de relación
-        -den: denominador de la fórmula del coeficiente de relación
+        -x_promx(float): promedio del conjunto en x
+        -y_promy(float): promedio del conjunto en y
+        -multixy(list): lista con el producto entre cada valor de ambas listas restado a su respectivo promedio
+        -x_promx2(list): lista con el cuadrado de cada diferencia entre los valores de x y su promedio
+        -y_promy2(list): lista con el cuadrado de cada diferencia entre los valores de y y su promedio
+        -num(float): numerador de la fórmula del coeficiente de relación
+        -den(float): denominador de la fórmula del coeficiente de relación
     """
     
     promx = mediaAritmetica(x)
